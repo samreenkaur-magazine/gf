@@ -1,0 +1,764 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    min-height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+
+    min-height: 100vh;
+
+    background: linear-gradient(
+        135deg,
+        #ffd6e7,
+        #fff0f6,
+        #ffc6dd
+    );
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:20px;
+
+    font-family:'Poppins', sans-serif;
+
+    position:relative;
+
+}
+
+
+/* Floating hearts */
+
+.heart {
+
+    position:absolute;
+
+    color:rgba(255,80,140,0.25);
+
+    font-size:clamp(20px,5vw,40px);
+
+    animation:float 12s infinite linear;
+
+    pointer-events:none;
+
+}
+
+
+@keyframes float {
+
+    0% {
+
+        transform:
+        translateY(110vh)
+        rotate(0deg);
+
+        opacity:0;
+
+    }
+
+
+    20% {
+
+        opacity:1;
+
+    }
+
+
+    100% {
+
+        transform:
+        translateY(-120vh)
+        rotate(360deg);
+
+        opacity:0;
+
+    }
+
+}
+
+
+
+/* Main box */
+
+.container {
+
+    width:100%;
+
+    max-width:600px;
+
+    padding:
+
+    clamp(25px,7vw,45px);
+
+
+    background:
+
+    rgba(255,255,255,0.45);
+
+
+    backdrop-filter:blur(15px);
+
+
+    -webkit-backdrop-filter:blur(15px);
+
+
+    border-radius:30px;
+
+
+    box-shadow:
+
+    0 15px 40px rgba(214,51,132,.25);
+
+
+    text-align:center;
+
+
+    animation:appear 1.2s ease;
+
+
+    z-index:2;
+
+}
+
+
+
+@keyframes appear {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(40px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}
+
+
+
+
+h1 {
+
+    color:#d63384;
+
+    font-size:
+
+    clamp(32px,8vw,45px);
+
+    margin-bottom:20px;
+
+    font-weight:600;
+
+}
+
+
+
+p {
+
+    color:#6d3b4f;
+
+    font-size:
+
+    clamp(15px,4vw,19px);
+
+
+    line-height:1.7;
+
+}
+
+
+
+
+.typing {
+
+    display:inline-block;
+
+    overflow:hidden;
+
+    white-space:nowrap;
+
+    max-width:100%;
+
+    border-right:3px solid #d63384;
+
+
+    animation:
+
+    typing 4s steps(40),
+
+    blink .7s infinite;
+
+}
+
+
+
+
+@keyframes typing {
+
+
+    from {
+
+        width:0;
+
+    }
+
+
+    to {
+
+        width:100%;
+
+    }
+
+}
+
+
+
+
+@keyframes blink {
+
+
+    50% {
+
+        border-color:transparent;
+
+    }
+
+}
+
+
+
+/* Button */
+
+.btn {
+
+
+    display:inline-block;
+
+
+    margin-top:30px;
+
+
+    padding:
+
+    15px 35px;
+
+
+    border-radius:50px;
+
+
+    background:
+
+    linear-gradient(
+    45deg,
+    #ff6fa5,
+    #ff9fc5
+    );
+
+
+    color:white;
+
+
+    text-decoration:none;
+
+
+    font-size:
+
+    clamp(15px,4vw,18px);
+
+
+    box-shadow:
+
+    0 10px 25px rgba(255,105,150,.35);
+
+
+    transition:.3s;
+
+
+    min-width:220px;
+
+}
+
+
+
+.btn:active {
+
+    transform:scale(.95);
+
+}
+
+
+/* Small phones */
+
+@media(max-width:400px){
+
+
+    body {
+
+        padding:15px;
+
+    }
+
+
+    .container {
+
+        border-radius:25px;
+
+    }
+
+
+    h1 {
+
+        margin-bottom:15px;
+
+    }
+
+
+    .btn {
+
+        width:100%;
+
+    }
+
+
+
+
+.container p {
+
+    animation:fadeText 1.5s ease;
+
+}
+
+
+@keyframes fadeText {
+
+    from {
+
+        opacity:0;
+
+        transform:translateY(15px);
+
+    }
+
+
+    to {
+
+        opacity:1;
+
+        transform:translateY(0);
+
+    }
+
+}}
+
+
+
+
+
+
+.choice-btn {
+
+    display:block;
+
+    width:100%;
+
+    margin:15px auto;
+
+    padding:16px 18px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.75);
+
+    color:#d63384;
+
+    text-decoration:none;
+
+    font-size:15px;
+
+    line-height:1.5;
+
+    box-shadow:
+    0 8px 20px rgba(255,105,150,.18);
+
+    transition:.3s;
+
+}
+
+
+.choice-btn:active {
+
+    transform:scale(.96);
+
+}
+
+
+
+
+
+/* TWO WORLDS PAGE */
+
+
+.world-container {
+
+    width:100%;
+
+    min-height:100vh;
+
+    display:flex;
+
+    flex-direction:column;
+
+    align-items:center;
+
+    position:relative;
+
+    padding:20px;
+
+}
+
+
+.world {
+
+
+    width:100%;
+
+    max-width:500px;
+
+    padding:25px;
+
+    border-radius:30px;
+
+    text-align:center;
+
+    backdrop-filter:blur(12px);
+
+    animation:appear 1.5s ease;
+
+
+}
+
+
+
+.her-world {
+
+    background:rgba(255,190,210,.35);
+
+}
+
+
+
+.my-world {
+
+    background:rgba(190,220,255,.25);
+
+}
+
+
+
+.emoji {
+
+    font-size:50px;
+
+}
+
+
+
+.world h2 {
+
+    color:#d63384;
+
+    margin:10px;
+
+}
+
+
+
+.scene {
+
+    margin:20px 0;
+
+}
+
+
+.icon {
+
+    font-size:35px;
+
+    margin-bottom:5px;
+
+}
+
+
+.scene p {
+
+    font-size:15px;
+
+}
+
+
+
+.connection {
+
+
+    z-index:5;
+
+    margin:-10px 0;
+
+    text-align:center;
+
+
+}
+
+
+
+.big-heart {
+
+    font-size:55px;
+
+    animation:pulse 1.5s infinite;
+
+}
+
+
+
+@keyframes pulse {
+
+
+    50% {
+
+        transform:scale(1.2);
+
+    }
+
+
+}
+
+
+
+.connection p {
+
+    color:#d63384;
+
+    font-weight:600;
+
+}
+
+
+
+.next-btn {
+
+    margin-top:30px;
+
+    margin-bottom:20px;
+
+}
+
+
+
+
+/* Desktop version */
+
+@media(min-width:800px){
+
+
+.world-container {
+
+    flex-direction:row;
+
+    justify-content:center;
+
+    gap:20px;
+
+}
+
+
+.world {
+
+    max-width:350px;
+
+}
+
+
+.connection {
+
+    margin:0 -10px;
+
+}
+
+
+}
+
+
+
+/* Mobile adjustments */
+
+@media(max-width:450px){
+
+
+.world-container {
+
+    padding:15px;
+
+}
+
+
+.world {
+
+    padding:20px;
+
+}
+
+
+.emoji {
+
+    font-size:42px;
+
+}
+
+
+.big-heart {
+
+    font-size:45px;
+
+}
+
+
+}
+
+
+
+
+.gift-card {
+
+    margin:35px auto;
+
+    padding:25px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,0.55);
+
+    box-shadow:
+    0 10px 30px rgba(255,105,150,0.2);
+
+}
+
+
+.gift-title {
+
+    color:#d63384;
+
+    font-size:22px;
+
+    font-weight:600;
+
+    margin-bottom:20px;
+
+}
+
+
+
+.gift-item {
+
+    margin:20px 0;
+
+    padding:15px;
+
+    border-radius:20px;
+
+    background:rgba(255,255,255,0.6);
+
+    color:#6d3b4f;
+
+}
+
+
+
+.gift-item:first-letter {
+
+    font-size:35px;
+
+}
+
+
+
+h2 {
+
+    color:#d63384;
+
+    font-size:24px;
+
+    margin-top:20px;
+
+}
+
+
+
+
+
+.final-page {
+
+    min-height:100vh;
+
+    padding-bottom:40px;
+
+}
+
+
+.final-page p {
+
+    font-size:14px;
+
+    line-height:1.6;
+
+}
+
+
+.final-page h1 {
+
+    font-size:32px;
+
+}
+
+
+.final-page h2 {
+
+    font-size:22px;
+
+}
+
+
+.final-page .gift-card {
+
+    margin:20px auto;
+
+    padding:15px;
+
+}
+
+
+.final-page .gift-item {
+
+    margin:12px 0;
+
+    padding:12px;
+
+    font-size:14px;
+
+}
